@@ -76,7 +76,7 @@ services:
         restart: always
         volumes:
             - ./:/var/www
-        command: bash -c "rm -rf node_modules/.vite && rm -rf public/build && npm run build-watch"
+        command: bash -c "rm -rf node_modules/.vite && rm -rf public/build && npm install && npm run build-watch"
         depends_on:
             kt-db:
                 condition: service_healthy
